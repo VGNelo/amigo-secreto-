@@ -27,7 +27,9 @@ function atualizarLista() {
 
 function sortearAmigo() {
   const resultado = document.getElementById('resultado');
-  resultado.innerHTML = ""; // Limpa resultado anterior
+  const imagem = document.getElementById('imagemSorteio');
+  resultado.innerHTML = "";
+  imagem.style.display = "none";
 
   if (amigos.length === 0) {
     const li = document.createElement('li');
@@ -40,6 +42,9 @@ function sortearAmigo() {
   const nomeSorteado = amigos[indice];
 
   const li = document.createElement('li');
-  li.innerHTML = `🎁 Amigo sorteado: <strong>${nomeSorteado}</strong>`;
+  li.innerHTML = `🎉 Amigo sorteado: <strong>${nomeSorteado}</strong>`;
   resultado.appendChild(li);
+
+  imagem.style.display = "block";
 }
+
