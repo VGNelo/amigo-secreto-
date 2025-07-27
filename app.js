@@ -1,8 +1,7 @@
-// script.js
 const amigos = [];
 
 function adicionarAmigo() {
-  const input = document.getElementById('amigo'); // ou 'nomeAmigo' se você mudar o id
+  const input = document.getElementById('amigo');
   const nome = input.value.trim();
 
   if (nome === "") {
@@ -28,14 +27,19 @@ function atualizarLista() {
 
 function sortearAmigo() {
   const resultado = document.getElementById('resultado');
+  resultado.innerHTML = ""; // Limpa resultado anterior
 
   if (amigos.length === 0) {
-    resultado.innerHTML = "Nenhum amigo disponível para sortear.";
+    const li = document.createElement('li');
+    li.textContent = "Nenhum amigo disponível para sortear.";
+    resultado.appendChild(li);
     return;
   }
 
   const indice = Math.floor(Math.random() * amigos.length);
   const nomeSorteado = amigos[indice];
 
-  resultado.innerHTML = `🎉 Amigo sorteado: <strong>${nomeSorteado}</strong>`;
+  const li = document.createElement('li');
+  li.innerHTML = `🎁 Amigo sorteado: <strong>${nomeSorteado}</strong>`;
+  resultado.appendChild(li);
 }
