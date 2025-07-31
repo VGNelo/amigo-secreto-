@@ -59,4 +59,4 @@ Seleciona aleatoriamente um nome da lista:
 
 ---
 
-Feito por Valdemir - Curso Alura
+Feito por Valdemir - Curso Alura / One
